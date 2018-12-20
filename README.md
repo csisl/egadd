@@ -1,3 +1,7 @@
 # egadd
+A program to log USB insertions
 
-usb port logger
+
+
+| IMPORTANT:    | This is a work in progress |
+| ------------- |:-------------:|
