@@ -54,7 +54,8 @@ def udev_connect():
 	for device in context.list_devices(subsystem=subsys):
 		devices.append(device)
 		if mode == DEV_MODE:
-			print("{}".format(device))
+			print('{0} ({1})' .format(device, device.device_type))
+                        #print('{0}'.format(device.device_type))
 	return
 
 	
