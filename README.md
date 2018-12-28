@@ -10,7 +10,7 @@ A program that tracks devices plugged into a computers USB port
 You will need to have pyudev and pyusb installed
 
 ```
-$ pip install pyudev
+$ pip3 install pyudev
 $ python3 -m pip install pyusb
 ```
 
