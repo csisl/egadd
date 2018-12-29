@@ -20,4 +20,4 @@ $ python3 -m pip install pyusb
 python3 egadd.py [dev]
 ```
 
-![alt text](https://github.com/stncal/egadd/blob/master/assets/prof_egadd.png)
+![alt text](https://shotr.io/qUhc6Ka6Xd.png)
