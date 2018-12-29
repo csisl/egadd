@@ -38,7 +38,7 @@ if(len(sys.argv) == 2):
 # only log the devices if the program is being run in user mode (USR_MODE)
 def log_devices():
 	# create a file with the format {YEAR} {MONTH} {DAY} {HOUR} {MINUTE} {SECOND}
-	file_name = timestamp.strftime("logs/[%Y-%m-%d]-[%H-%M-%s]")
+	file_name = timestamp.strftime("logs/[%Y-%m-%d]-[%H-%M-%S]")
 	print("Logging udev in file: {}".format(file_name))
 	file = open(file_name, "w+")
 	for device in devices:
