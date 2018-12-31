@@ -9,13 +9,13 @@ list_devices()
 	for sysdevpath in $(find /sys/bus/usb/devices/usb*/ -name dev); do
         
 		path="${sysdevpath%/dev}"
-        devName="$(udevadm info -q name -p $path)"
+        	devName="$(udevadm info -q name -p $path)"
 	
-        if [[ "$devName" == "bus/"* ]]; then
+        	if [[ "$devName" == "bus/"* ]]; then
 			continue
 		fi
 
-     	eval "$(udevadm info -q property --export -p $path)"
+     		eval "$(udevadm info -q property --export -p $path)"
 		#echo $ID_SERIAL
 
 		if [[ -z "$ID_SERIAL" ]]; then
@@ -26,7 +26,6 @@ list_devices()
 			else
 				echo "$ID_SERIAL"
 			fi
-
 			ID_SERIAL=""
 		fi
 	done
