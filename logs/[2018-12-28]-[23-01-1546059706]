@@ -1,5 +1,0 @@
-None
-Device('/sys/devices/pci0000:00/0000:00:06.0/usb1')
-Device('/sys/devices/pci0000:00/0000:00:06.0/usb1/1-0:1.0')
-Device('/sys/devices/pci0000:00/0000:00:06.0/usb1/1-1')
-Device('/sys/devices/pci0000:00/0000:00:06.0/usb1/1-1/1-1:1.0')

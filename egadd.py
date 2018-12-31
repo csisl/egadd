@@ -2,6 +2,7 @@
 import pyudev
 import sys
 import datetime		# log files will be named with current date/time
+import subprocess	# execute the bash script 
 
 # usage: python egadd.py [dev]
 # 	dev: run in dev mode, for testing purposes only & no log file is created
@@ -19,7 +20,7 @@ subsys = "usb"
 timestamp = datetime.datetime.now()
 
 # devices list
-devices = [None]
+device_list = []
 
 # which mode are we running the program in
 DEV_MODE = 1
@@ -38,28 +39,40 @@ if(len(sys.argv) == 2):
 # only log the devices if the program is being run in user mode (USR_MODE)
 def log_devices():
 	# create a file with the format {YEAR} {MONTH} {DAY} {HOUR} {MINUTE} {SECOND}
-	file_name = timestamp.strftime("logs/[%Y-%m-%d]-[%H-%M-%S]")
+	file_name = timestamp.strftime("logs/%Y-%m-%d-%H-%M-%S")
 	print("Logging udev in file: {}".format(file_name))
 	file = open(file_name, "w+")
-	for device in devices:
+	for device in device_list:
 		file.write(str(device) + "\n")
 	file.close()
 	return
 
-def udev_connect():
-	# establish a connection to the udev device database
-	context = pyudev.Context()
-	
-	# list the devices in the usb subsystem
-	for device in context.list_devices(subsystem=subsys):
-		devices.append(device)
-		if mode == DEV_MODE:
-			print('{0} ({1})' .format(device, device.device_type))
-                        #print('{0}'.format(device.device_type))
-	return
+# get the devices with the bash script poltergust3000
+def get_devices():
+	try:
+		# save the output to devices
+		devices = subprocess.run(["./poltergust3000"], stdout=subprocess.PIPE)
 
+		# decode the output 
+		decoded_devs = devices.stdout.decode('utf-8')
+		
+		# split the results of the output by new-line char
+		split_devs = decoded_devs.split("\n")
+
+		# for nice output to the log file, loop through the split result
+		# and append the data to the device list
+		for dev in split_devs:
+			device_list.append(dev)
+
+		if mode == DEV_MODE:
+			print("{}".format('\n'.join(device_list)))
+	except:
+		print(CRED + "Unable to execute poltergust3000!" + CRESET)
+		sys.exit()
 	
 if __name__ == "__main__":
-	udev_connect()
+	get_devices()
 	if mode == USR_MODE:
 		log_devices()
+
+
