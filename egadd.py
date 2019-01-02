@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-#import pyudev
 import sys
 import datetime		# log files will be named with current date/time
 import subprocess	# execute the bash script 
