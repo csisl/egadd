@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-import pyudev
+#import pyudev
 import sys
 import datetime		# log files will be named with current date/time
 import subprocess	# execute the bash script 
@@ -40,7 +40,7 @@ if(len(sys.argv) == 2):
 def log_devices():
 	# create a file with the format {YEAR} {MONTH} {DAY} {HOUR} {MINUTE} {SECOND}
 	file_name = timestamp.strftime("logs/%Y-%m-%d_%H-%M-%S")
-	print("Logging udev in file: {}".format(file_name))
+	print("Logging devices in file: {}".format(file_name))
 	file = open(file_name, "w+")
 	for device in device_list:
 		file.write(str(device) + "\n")
@@ -52,24 +52,29 @@ def get_devices():
 	try:
 		# save the output to devices
 		devices = subprocess.run(["./poltergust3000"], stdout=subprocess.PIPE)
-
-		# decode the output 
-		decoded_devs = devices.stdout.decode('utf-8')
-		
-		# split the results of the output by new-line char
-		split_devs = decoded_devs.split("\n")
-
-		# for nice output to the log file, loop through the split result
-		# and append the data to the device list
-		for dev in split_devs:
-			device_list.append(dev)
-
-		if mode == DEV_MODE:
-			print("{}".format('\n'.join(device_list)))
 	except:
-		print(CRED + "Unable to execute poltergust3000!" + CRESET)
+		print(CRED + "Error: Unable to execute poltergust3000!" + CRESET)
 		sys.exit()
 	
+	# decode the output 
+	decoded_devs = devices.stdout.decode('utf-8')
+	
+	# split the results of the output by new-line char
+	split_devs = decoded_devs.split("\n")
+	
+	# for nice output to the log file, loop through the split result
+	# and append the data to the device list
+	global device_list
+	for dev in split_devs:
+		device_list.append(dev)
+	
+	# make sure all devices are distinct
+	device_list = list(set(device_list))
+
+	if mode == DEV_MODE:
+		print("{}".format('\n'.join(device_list)))
+	return	
+
 if __name__ == "__main__":
 	get_devices()
 	if mode == USR_MODE:
