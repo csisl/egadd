@@ -65,7 +65,8 @@ def get_devices():
 	# and append the data to the device list
 	global device_list
 	for dev in split_devs:
-		device_list.append(dev)
+		if dev != "":
+			device_list.append(dev)
 	
 	# make sure all devices are distinct
 	device_list = list(set(device_list))
