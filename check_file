@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# A simple script to read the most recent log file created 
+file=$(ls -t logs/ | head -1)
+cat logs/$file

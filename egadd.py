@@ -47,7 +47,11 @@ def log_devices():
 	return
 
 # get the devices with the bash script poltergust3000
-def get_devices():
+# 	action:		if the device was removed or added, provided by parascope.py
+#				if egadd is ran alone, it will be the mode
+def get_devices(action):
+
+	# execute our poltergust3000 script and pipe the results into the devices variable
 	try:
 		# save the output to devices
 		devices = subprocess.run(["./poltergust3000"], stdout=subprocess.PIPE)
@@ -66,18 +70,22 @@ def get_devices():
 	global device_list
 	for dev in split_devs:
 		if dev != "":
-			device_list.append(dev)
+			# only append the action if it's coming from the parascope.py script
+			if action == DEV_MODE or action == USR_MODE:
+				device_list.append(dev)
+			else:
+				device_list.append(action + ": " + dev)
 	
 	# make sure all devices are distinct
 	device_list = list(set(device_list))
 
 	if mode == DEV_MODE:
 		print("{}".format('\n'.join(device_list)))
+	else:
+		log_devices()
 	return	
 
 if __name__ == "__main__":
-	get_devices()
-	if mode == USR_MODE:
-		log_devices()
-
+	# pass in the mode if egadd is being run alone
+	get_devices(mode)
 
