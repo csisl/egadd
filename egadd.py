@@ -87,7 +87,6 @@ def get_devices(action):
 
 if __name__ == "__main__":
 	# pass in the mode if egadd is being run alone
-	bMenuOptions = True
 	while True:
 		menu = input("START OR EXIT: ")
 		if menu.upper() == "START":
