@@ -87,15 +87,6 @@ def get_devices(action):
 
 if __name__ == "__main__":
 	# pass in the mode if egadd is being run alone
-	while True:
-		menu = input("START OR EXIT: ")
-		if menu.upper() == "START":
-			#we will start monitoring here
-			print("\n")
-			get_devices(mode)
-		elif menu.upper() == "EXIT":
-			exit()
-		else:
-			print("not a value menu option, try again")
+	get_devices(mode)
 
 
