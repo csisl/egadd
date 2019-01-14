@@ -16,6 +16,7 @@ list_devices()
 		fi
 
      		eval "$(udevadm info -q property --export -p $path)"
+     		#var=eval "$(udevadm info -q property --export -p $path)"
 		#echo $ID_SERIAL
 
 		if [[ -z "$ID_SERIAL" ]]; then
@@ -24,7 +25,8 @@ list_devices()
 			if [ "$DEV_MODE" == 1 ];then
 				echo "/dev/$devName - $ID_SERIAL"
 			else
-				echo "$ID_SERIAL:$ID_FS_UUID:$ID_TYPE"
+				#echo "$var"
+				echo "$ID_SERIAL|$ID_PATH_TAG|$ID_TYPE"
 			fi
 			ID_SERIAL=""
 		fi
