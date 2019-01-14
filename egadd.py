@@ -38,9 +38,12 @@ if(len(sys.argv) == 2):
 # only log the devices if the program is being run in user mode (USR_MODE)
 def log_devices():
 	# create a file with the format {YEAR} {MONTH} {DAY} {HOUR} {MINUTE} {SECOND}
-	file_name = timestamp.strftime("logs/%Y-%m-%d_%H-%M-%S")
+	file_name = timestamp.strftime("logs/%Y-%m-%d")
+	curr_time = timestamp.strftime("%H-%M-%S")
+	
 	print("Logging devices in file: {}".format(file_name))
-	file = open(file_name, "w+")
+	file = open(file_name, "a+")
+	file.write("-----" + curr_time + "-----" + "\n")
 	for device in device_list:
 		file.write(str(device) + "\n")
 	file.close()
