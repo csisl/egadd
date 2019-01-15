@@ -34,7 +34,7 @@ context = pyudev.Context()
 monitor = pyudev.Monitor.from_netlink(context)
 monitor.filter_by(subsystem='input')
 for action, device in monitor:
-	print("{}:::{}".format(action, device))
+	print("\33[31m{}:{}\33[0m".format(action, device))
 	if action == "add":
 		get_devices("ADD")
 	elif action == "remove":
