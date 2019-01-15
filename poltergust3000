@@ -26,6 +26,9 @@ list_devices()
 				echo "/dev/$devName - $ID_SERIAL"
 			else
 				#echo "$var"
+				# ID_SERIAL is the name of the device
+				# ID_PATH_TAG is where the device is located
+				# $ID_TYPE is the type of device
 				echo "$ID_SERIAL|$ID_PATH_TAG|$ID_TYPE"
 			fi
 			ID_SERIAL=""
