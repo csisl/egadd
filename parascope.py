@@ -36,9 +36,11 @@ if dev_mode == False:
 
 context = pyudev.Context()
 monitor = pyudev.Monitor.from_netlink(context)
-monitor.filter_by(subsystem='input')
+monitor.filter_by(subsystem='usb')
 for action, device in monitor:
 	print("\33[31m{}:{}\33[0m".format(action, device))
+	if dev_mode == False:
+		print("\33[33mMonitoring started, not in dev mode\33[0m")
 	if action == "add":
 		get_devices("ADD")
 	elif action == "remove":

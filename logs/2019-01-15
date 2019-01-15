@@ -7,3 +7,116 @@ PNY_USB_3.0_FD_070B6C8352FEFB78-0:0|pci-0000_04_00_0-usb-0_1_1_0-scsi-0_0_0_0|di
 SunplusIT_INC._HD_WebCam|pci-0000_00_14_0-usb-0_9_1_0|video
 E-Signal_Keyboard|pci-0000_00_14_0-usb-0_5_1_0|hid
 E-Signal_Keyboard|pci-0000_00_14_0-usb-0_5_1_1|hid
+-----17:31:07-----
+ADD: Dell_Dell_USB_Keyboard|pci-0000_00_1a_2-usb-0_2_1_0|hid
+ADD: Dell_Dell_USB_Optical_Mouse|pci-0000_00_1a_2-usb-0_1_1_0|hid
+ADD: C-Media_Electronics_Inc._USB_Audio_Device|pci-0000_00_1d_1-usb-0_2_1_3|hid
+-----17:31:07-----
+ADD: Dell_Dell_USB_Keyboard|pci-0000_00_1a_2-usb-0_2_1_0|hid
+ADD: Dell_Dell_USB_Optical_Mouse|pci-0000_00_1a_2-usb-0_1_1_0|hid
+ADD: C-Media_Electronics_Inc._USB_Audio_Device|pci-0000_00_1d_1-usb-0_2_1_3|hid
+-----17:31:07-----
+ADD: Dell_Dell_USB_Keyboard|pci-0000_00_1a_2-usb-0_2_1_0|hid
+REMOVE: Dell_Dell_USB_Optical_Mouse|pci-0000_00_1a_2-usb-0_1_1_0|hid
+ADD: Dell_Dell_USB_Optical_Mouse|pci-0000_00_1a_2-usb-0_1_1_0|hid
+REMOVE: Dell_Dell_USB_Keyboard|pci-0000_00_1a_2-usb-0_2_1_0|hid
+ADD: C-Media_Electronics_Inc._USB_Audio_Device|pci-0000_00_1d_1-usb-0_2_1_3|hid
+-----17:31:07-----
+ADD: Dell_Dell_USB_Keyboard|pci-0000_00_1a_2-usb-0_2_1_0|hid
+REMOVE: Dell_Dell_USB_Optical_Mouse|pci-0000_00_1a_2-usb-0_1_1_0|hid
+ADD: Dell_Dell_USB_Optical_Mouse|pci-0000_00_1a_2-usb-0_1_1_0|hid
+REMOVE: Dell_Dell_USB_Keyboard|pci-0000_00_1a_2-usb-0_2_1_0|hid
+ADD: C-Media_Electronics_Inc._USB_Audio_Device|pci-0000_00_1d_1-usb-0_2_1_3|hid
+-----17:39:15-----
+ADD: Dell_Dell_USB_Optical_Mouse|pci-0000_00_1a_2-usb-0_1_1_0|hid
+ADD: Dell_Dell_USB_Keyboard|pci-0000_00_1a_2-usb-0_2_1_0|hid
+ADD: C-Media_Electronics_Inc._USB_Audio_Device|pci-0000_00_1d_2-usb-0_2_1_3|hid
+ADD: C-Media_Electronics_Inc._USB_Audio_Device|pci-0000_00_1d_2-usb-0_2_1_0|audio
+ADD: PNY_USB_3.0_FD_070B6C8E15A9BA46-0:0|pci-0000_00_1d_7-usb-0_4_1_0-scsi-0_0_0_0|disk
+-----17:39:15-----
+ADD: Dell_Dell_USB_Optical_Mouse|pci-0000_00_1a_2-usb-0_1_1_0|hid
+ADD: Dell_Dell_USB_Keyboard|pci-0000_00_1a_2-usb-0_2_1_0|hid
+ADD: C-Media_Electronics_Inc._USB_Audio_Device|pci-0000_00_1d_2-usb-0_2_1_3|hid
+ADD: C-Media_Electronics_Inc._USB_Audio_Device|pci-0000_00_1d_2-usb-0_2_1_0|audio
+ADD: PNY_USB_3.0_FD_070B6C8E15A9BA46-0:0|pci-0000_00_1d_7-usb-0_4_1_0-scsi-0_0_0_0|disk
+-----17:39:15-----
+ADD: Dell_Dell_USB_Optical_Mouse|pci-0000_00_1a_2-usb-0_1_1_0|hid
+ADD: Dell_Dell_USB_Keyboard|pci-0000_00_1a_2-usb-0_2_1_0|hid
+ADD: C-Media_Electronics_Inc._USB_Audio_Device|pci-0000_00_1d_2-usb-0_2_1_3|hid
+ADD: C-Media_Electronics_Inc._USB_Audio_Device|pci-0000_00_1d_2-usb-0_2_1_0|audio
+ADD: PNY_USB_3.0_FD_070B6C8E15A9BA46-0:0|pci-0000_00_1d_7-usb-0_4_1_0-scsi-0_0_0_0|disk
+-----17:39:15-----
+ADD: Dell_Dell_USB_Optical_Mouse|pci-0000_00_1a_2-usb-0_1_1_0|hid
+ADD: Dell_Dell_USB_Keyboard|pci-0000_00_1a_2-usb-0_2_1_0|hid
+ADD: C-Media_Electronics_Inc._USB_Audio_Device|pci-0000_00_1d_2-usb-0_2_1_3|hid
+ADD: C-Media_Electronics_Inc._USB_Audio_Device|pci-0000_00_1d_2-usb-0_2_1_0|audio
+ADD: PNY_USB_3.0_FD_070B6C8E15A9BA46-0:0|pci-0000_00_1d_7-usb-0_4_1_0-scsi-0_0_0_0|disk
+-----17:39:15-----
+ADD: Dell_Dell_USB_Optical_Mouse|pci-0000_00_1a_2-usb-0_1_1_0|hid
+ADD: Dell_Dell_USB_Keyboard|pci-0000_00_1a_2-usb-0_2_1_0|hid
+ADD: C-Media_Electronics_Inc._USB_Audio_Device|pci-0000_00_1d_2-usb-0_2_1_3|hid
+ADD: C-Media_Electronics_Inc._USB_Audio_Device|pci-0000_00_1d_2-usb-0_2_1_0|audio
+ADD: PNY_USB_3.0_FD_070B6C8E15A9BA46-0:0|pci-0000_00_1d_7-usb-0_4_1_0-scsi-0_0_0_0|disk
+-----17:39:15-----
+ADD: C-Media_Electronics_Inc._USB_Audio_Device|pci-0000_00_1d_2-usb-0_2_1_0|audio
+ADD: Dell_Dell_USB_Optical_Mouse|pci-0000_00_1a_2-usb-0_1_1_0|hid
+REMOVE: Dell_Dell_USB_Keyboard|pci-0000_00_1a_2-usb-0_2_1_0|hid
+ADD: Dell_Dell_USB_Keyboard|pci-0000_00_1a_2-usb-0_2_1_0|hid
+REMOVE: PNY_USB_3.0_FD_070B6C8E15A9BA46-0:0|pci-0000_00_1d_7-usb-0_4_1_0-scsi-0_0_0_0|disk
+ADD: C-Media_Electronics_Inc._USB_Audio_Device|pci-0000_00_1d_2-usb-0_2_1_3|hid
+REMOVE: Dell_Dell_USB_Optical_Mouse|pci-0000_00_1a_2-usb-0_1_1_0|hid
+ADD: PNY_USB_3.0_FD_070B6C8E15A9BA46-0:0|pci-0000_00_1d_7-usb-0_4_1_0-scsi-0_0_0_0|disk
+-----17:39:15-----
+ADD: C-Media_Electronics_Inc._USB_Audio_Device|pci-0000_00_1d_2-usb-0_2_1_0|audio
+ADD: PNY_USB_3.0_FD_070B6C8E15A9BA46-0:0|pci-0000_00_1d_7-usb-0_4_1_0-scsi-0_0_0_0|disk
+ADD: Dell_Dell_USB_Optical_Mouse|pci-0000_00_1a_2-usb-0_1_1_0|hid
+ADD: Dell_Dell_USB_Keyboard|pci-0000_00_1a_2-usb-0_2_1_0|hid
+REMOVE: PNY_USB_3.0_FD_070B6C8E15A9BA46-0:0|pci-0000_00_1d_7-usb-0_4_1_0-scsi-0_0_0_0|disk
+ADD: C-Media_Electronics_Inc._USB_Audio_Device|pci-0000_00_1d_2-usb-0_2_1_3|hid
+REMOVE: Dell_Dell_USB_Optical_Mouse|pci-0000_00_1a_2-usb-0_1_1_0|hid
+REMOVE: Dell_Dell_USB_Keyboard|pci-0000_00_1a_2-usb-0_2_1_0|hid
+-----17:39:15-----
+ADD: C-Media_Electronics_Inc._USB_Audio_Device|pci-0000_00_1d_2-usb-0_2_1_0|audio
+ADD: Dell_Dell_USB_Optical_Mouse|pci-0000_00_1a_2-usb-0_1_1_0|hid
+REMOVE: Dell_Dell_USB_Keyboard|pci-0000_00_1a_2-usb-0_2_1_0|hid
+ADD: Dell_Dell_USB_Keyboard|pci-0000_00_1a_2-usb-0_2_1_0|hid
+REMOVE: PNY_USB_3.0_FD_070B6C8E15A9BA46-0:0|pci-0000_00_1d_7-usb-0_4_1_0-scsi-0_0_0_0|disk
+ADD: C-Media_Electronics_Inc._USB_Audio_Device|pci-0000_00_1d_2-usb-0_2_1_3|hid
+REMOVE: Dell_Dell_USB_Optical_Mouse|pci-0000_00_1a_2-usb-0_1_1_0|hid
+ADD: PNY_USB_3.0_FD_070B6C8E15A9BA46-0:0|pci-0000_00_1d_7-usb-0_4_1_0-scsi-0_0_0_0|disk
+-----17:39:15-----
+ADD: C-Media_Electronics_Inc._USB_Audio_Device|pci-0000_00_1d_2-usb-0_2_1_0|audio
+ADD: PNY_USB_3.0_FD_070B6C8E15A9BA46-0:0|pci-0000_00_1d_7-usb-0_4_1_0-scsi-0_0_0_0|disk
+ADD: Dell_Dell_USB_Optical_Mouse|pci-0000_00_1a_2-usb-0_1_1_0|hid
+ADD: Dell_Dell_USB_Keyboard|pci-0000_00_1a_2-usb-0_2_1_0|hid
+REMOVE: PNY_USB_3.0_FD_070B6C8E15A9BA46-0:0|pci-0000_00_1d_7-usb-0_4_1_0-scsi-0_0_0_0|disk
+ADD: C-Media_Electronics_Inc._USB_Audio_Device|pci-0000_00_1d_2-usb-0_2_1_3|hid
+REMOVE: Dell_Dell_USB_Optical_Mouse|pci-0000_00_1a_2-usb-0_1_1_0|hid
+REMOVE: Dell_Dell_USB_Keyboard|pci-0000_00_1a_2-usb-0_2_1_0|hid
+-----17:39:15-----
+ADD: C-Media_Electronics_Inc._USB_Audio_Device|pci-0000_00_1d_2-usb-0_2_1_0|audio
+ADD: Dell_Dell_USB_Optical_Mouse|pci-0000_00_1a_2-usb-0_1_1_0|hid
+REMOVE: Dell_Dell_USB_Keyboard|pci-0000_00_1a_2-usb-0_2_1_0|hid
+ADD: Dell_Dell_USB_Keyboard|pci-0000_00_1a_2-usb-0_2_1_0|hid
+REMOVE: PNY_USB_3.0_FD_070B6C8E15A9BA46-0:0|pci-0000_00_1d_7-usb-0_4_1_0-scsi-0_0_0_0|disk
+ADD: C-Media_Electronics_Inc._USB_Audio_Device|pci-0000_00_1d_2-usb-0_2_1_3|hid
+REMOVE: Dell_Dell_USB_Optical_Mouse|pci-0000_00_1a_2-usb-0_1_1_0|hid
+ADD: PNY_USB_3.0_FD_070B6C8E15A9BA46-0:0|pci-0000_00_1d_7-usb-0_4_1_0-scsi-0_0_0_0|disk
+-----17:39:15-----
+ADD: C-Media_Electronics_Inc._USB_Audio_Device|pci-0000_00_1d_2-usb-0_2_1_0|audio
+ADD: PNY_USB_3.0_FD_070B6C8E15A9BA46-0:0|pci-0000_00_1d_7-usb-0_4_1_0-scsi-0_0_0_0|disk
+ADD: Dell_Dell_USB_Optical_Mouse|pci-0000_00_1a_2-usb-0_1_1_0|hid
+ADD: Dell_Dell_USB_Keyboard|pci-0000_00_1a_2-usb-0_2_1_0|hid
+REMOVE: PNY_USB_3.0_FD_070B6C8E15A9BA46-0:0|pci-0000_00_1d_7-usb-0_4_1_0-scsi-0_0_0_0|disk
+ADD: C-Media_Electronics_Inc._USB_Audio_Device|pci-0000_00_1d_2-usb-0_2_1_3|hid
+REMOVE: Dell_Dell_USB_Optical_Mouse|pci-0000_00_1a_2-usb-0_1_1_0|hid
+REMOVE: Dell_Dell_USB_Keyboard|pci-0000_00_1a_2-usb-0_2_1_0|hid
+-----17:39:15-----
+ADD: C-Media_Electronics_Inc._USB_Audio_Device|pci-0000_00_1d_2-usb-0_2_1_0|audio
+ADD: Dell_Dell_USB_Optical_Mouse|pci-0000_00_1a_2-usb-0_1_1_0|hid
+REMOVE: Dell_Dell_USB_Keyboard|pci-0000_00_1a_2-usb-0_2_1_0|hid
+ADD: Dell_Dell_USB_Keyboard|pci-0000_00_1a_2-usb-0_2_1_0|hid
+REMOVE: PNY_USB_3.0_FD_070B6C8E15A9BA46-0:0|pci-0000_00_1d_7-usb-0_4_1_0-scsi-0_0_0_0|disk
+ADD: C-Media_Electronics_Inc._USB_Audio_Device|pci-0000_00_1d_2-usb-0_2_1_3|hid
+REMOVE: Dell_Dell_USB_Optical_Mouse|pci-0000_00_1a_2-usb-0_1_1_0|hid
+ADD: PNY_USB_3.0_FD_070B6C8E15A9BA46-0:0|pci-0000_00_1d_7-usb-0_4_1_0-scsi-0_0_0_0|disk
