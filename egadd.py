@@ -39,7 +39,7 @@ if(len(sys.argv) == 2):
 def log_devices():
 	# create a file with the format {YEAR} {MONTH} {DAY} {HOUR} {MINUTE} {SECOND}
 	file_name = timestamp.strftime("logs/%Y-%m-%d")
-	curr_time = timestamp.strftime("%H-%M-%S")
+	curr_time = timestamp.strftime("%H:%M:%S")
 	
 	print("Logging devices in file: {}".format(file_name))
 	file = open(file_name, "a+")
