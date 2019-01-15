@@ -18,8 +18,11 @@ subsys = "usb"
 # get current date and time for naming log file
 timestamp = datetime.datetime.now()
 
-# devices list
+# devices list (need to change this dictionary)
 device_list = []
+
+# list of default machine devices
+machine_list = {}
 
 # which mode are we running the program in
 DEV_MODE = 1
@@ -73,6 +76,9 @@ def get_devices(action):
 	global device_list
 	for dev in split_devs:
 		if dev != "":
+			#line format is $ID_SERIAL|$ID_PATH_TAG|$ID_TYPE
+			dev_info = dev.split("|")
+			
 			# only append the action if it's coming from the parascope.py script
 			if action == DEV_MODE or action == USR_MODE:
 				device_list.append(dev)

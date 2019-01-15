@@ -29,7 +29,11 @@ if (len(sys.argv) == 2):
 
 # list of actions that occur
 actions = []
-	
+
+# simple message to notify user of a successful launch
+if dev_mode == False:
+	print("\33[32mMonitoring started\33[0m")
+
 context = pyudev.Context()
 monitor = pyudev.Monitor.from_netlink(context)
 monitor.filter_by(subsystem='input')
