@@ -4,7 +4,8 @@ import pyudev
 # Once a device is plugged into the machine, we want to begin logging the device
 from egadd import get_devices
 
-# usage: python3 parascope.py
+# usage: python3 parascope.py [dev]
+#	dev		a mode to run for debugging so the log files don't get clogged up
 
 # The program to implement Monitor
 
@@ -14,6 +15,18 @@ if 'pyudev' not in sys.modules:
 	print("\t$ python3 -m pip install pyudev")
 	sys.exit()
 
+# by default it will not run dev mode
+dev_mode = False
+
+if (len(sys.argv) == 2):
+	if (sys.argv[1] == "dev"):
+		# running in dev mode, do not create log files and only print the device/action
+		dev_mode = True
+		print("\33[32mMonitoring dev mode\33[0m")
+	else:
+		print("usage: python3 parascope.py [dev]")
+		sys.exit()
+
 # list of actions that occur
 actions = []
 	
@@ -21,11 +34,13 @@ context = pyudev.Context()
 monitor = pyudev.Monitor.from_netlink(context)
 monitor.filter_by(subsystem='input')
 for action, device in monitor:
-	print("{}".format(action))
+	print("{}:::{}".format(action, device))
 	if action == "add":
 		get_devices("ADD")
 	elif action == "remove":
 		get_devices("REMOVE")
+	elif dev_mode == True:
+		get_devices(1)
 	else:
 		# unknown action occured
 		sys.exit()
