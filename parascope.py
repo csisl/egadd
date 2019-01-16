@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import sys
 import pyudev
+import re
 # Once a device is plugged into the machine, we want to begin logging the device
 from egadd import get_devices
 
@@ -32,22 +33,29 @@ actions = []
 
 # simple message to notify user of a successful launch
 if dev_mode == False:
-	print("\33[32mMonitoring started\33[0m")
+	print("\33[33mMonitoring started, not in dev mode\33[0m")
 
 context = pyudev.Context()
 monitor = pyudev.Monitor.from_netlink(context)
 monitor.filter_by(subsystem='usb')
+
 for action, device in monitor:
-	print("\33[31m{}:{}\33[0m".format(action, device))
-	if dev_mode == False:
-		print("\33[33mMonitoring started, not in dev mode\33[0m")
+	# using split to count how many sub dir
+	slash_count = str(device).split("/")
+
 	if action == "add":
-		get_devices("ADD")
-	elif action == "remove":
-		get_devices("REMOVE")
+			if len(slash_count) == 7:
+				print("\33[31m{}:{}\33[0m".format(action, device))	
+				get_devices("ADD")
+	elif action == "remove": # this works perfect
+		if len(slash_count) == 7:
+			print("\33[31m{}:{}\33[0m".format(action, device))
+			get_devices("REMOVE")
 	elif dev_mode == True:
 		get_devices(1)
+	elif action == "bind" or action == "unbind":
+		continue
 	else:
-		# unknown action occured
+		#unknown action occured
+		#print (action)
 		sys.exit()
-		
