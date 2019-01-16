@@ -1,5 +1,5 @@
 # egadd
-A program that tracks devices plugged into a computers USB port
+A program that monitors and logs devices plugged into a computers USB port.
 
 
 | IMPORTANT:    | This is a work in progress |
