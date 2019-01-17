@@ -55,7 +55,7 @@ def log_devices():
 # get the devices with the bash script poltergust3000
 # 	action:		if the device was removed or added, provided by parascope.py
 #				if egadd is ran alone, it will be the mode
-def get_devices(action):
+def get_devices(action=2):
 
 	# execute our poltergust3000 script and pipe the results into the devices variable
 	try:
@@ -74,6 +74,9 @@ def get_devices(action):
 	# for nice output to the log file, loop through the split result
 	# and append the data to the device list
 	global device_list
+
+	#clearing the list on every call
+	device_list = []
 	for dev in split_devs:
 		if dev != "":
 			#line format is $ID_SERIAL|$ID_PATH_TAG|$ID_TYPE
