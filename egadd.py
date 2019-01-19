@@ -44,7 +44,7 @@ def log_devices():
 	file_name = timestamp.strftime("logs/%Y-%m-%d")
 	curr_time = timestamp.strftime("%H:%M:%S")
 	
-	print("Logging devices in file: {}".format(file_name))
+	print("Logging devices in file: {} @ {}".format(file_name, curr_time))
 	file = open(file_name, "a+")
 	file.write("-----" + curr_time + "-----" + "\n")
 	for device in device_list:
