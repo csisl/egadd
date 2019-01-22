@@ -15,9 +15,6 @@ CRED   = '\33[31m'
 # default = USB
 subsys = "usb"
 
-# get current date and time for naming log file
-timestamp = datetime.datetime.now()
-
 # devices list (need to change this dictionary)
 device_list = []
 
@@ -41,8 +38,8 @@ if(len(sys.argv) == 2):
 # only log the devices if the program is being run in user mode (USR_MODE)
 def log_devices():
 	# create a file with the format {YEAR} {MONTH} {DAY} {HOUR} {MINUTE} {SECOND}
-	file_name = timestamp.strftime("logs/%Y-%m-%d")
-	curr_time = timestamp.strftime("%H:%M:%S")
+	file_name = datetime.datetime.now().strftime("logs/%Y-%m-%d")
+	curr_time = datetime.datetime.now().strftime("%H:%M:%S")
 	
 	print("Logging devices in file: {} @ {}".format(file_name, curr_time))
 	file = open(file_name, "a+")
