@@ -35,32 +35,38 @@ actions = []
 # simple message to notify user of a successful launch
 if dev_mode == False:
 	print("\33[33mMonitoring started, not in dev mode\33[0m")
+	print("Press Ctrl + C to terminate")
 
 context = pyudev.Context()
 monitor = pyudev.Monitor.from_netlink(context)
 monitor.filter_by(subsystem='usb')
 
-for action, device in monitor:
-	# using split to count how many sub dir
-	slash_count = str(device).split("/")
+try:
+	for action, device in monitor:
+		# using split to count how many sub dir
+		slash_count = str(device).split("/")
 
-	if action == "add":
-		if len(slash_count) == 7:
-			if dev_mode == True:
-				get_devices(1)
-			else:
-				print("\33[31m{}:{}\33[0m".format(action, device))	
-				#get_devices("ADD")
-				get_devices(2)
-	elif action == "remove": # this works perfect
-		if len(slash_count) == 7:
-			if dev_mode == True:
-				get_devices(1)
-			else:
-				print("\33[31m{}:{}\33[0m".format(action, device))
-				#get_devices("REMOVE")
-				get_devices(2)
-	elif action == "bind" or action == "unbind":
-		continue
-	else:
-		sys.exit()
+		if action == "add":
+			if len(slash_count) == 7:
+				if dev_mode == True:
+					get_devices(1)
+				else:
+					print("\33[31m{}:{}\33[0m".format(action, device))	
+					#get_devices("ADD")
+					get_devices(2)
+		elif action == "remove": # this works perfect
+			if len(slash_count) == 7:
+				if dev_mode == True:
+					get_devices(1)
+				else:
+					print("\33[31m{}:{}\33[0m".format(action, device))
+					#get_devices("REMOVE")
+					get_devices(2)
+		elif action == "bind" or action == "unbind":
+			continue
+		else:
+			sys.exit()
+except KeyboardInterrupt:
+	print("\n")
+	print("Parascope Monitor Terminated")
+	pass
