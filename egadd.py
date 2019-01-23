@@ -2,6 +2,7 @@
 import sys
 import datetime		# log files will be named with current date/time
 import subprocess	# execute the bash script 
+import time 		# used to sleep get_devices()
 
 # usage: python egadd.py [dev]
 # 	dev: run in dev mode, for testing purposes only & no log file is created
@@ -54,6 +55,7 @@ def log_devices():
 #				if egadd is ran alone, it will be the mode
 def get_devices(action=2):
 
+	time.sleep(1.5)
 	# execute our poltergust3000 script and pipe the results into the devices variable
 	try:
 		# save the output to devices

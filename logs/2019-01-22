@@ -1,8 +1,9 @@
------13:29:26-----
-SunplusIT_INC._HD_WebCam|pci-0000_00_14_0-usb-0_9_1_0|video
+-----21:26:47-----
 E-Signal_Keyboard|pci-0000_00_14_0-usb-0_5_1_0|hid
 E-Signal_Keyboard|pci-0000_00_14_0-usb-0_5_1_1|hid
------13:29:28-----
 SunplusIT_INC._HD_WebCam|pci-0000_00_14_0-usb-0_9_1_0|video
+-----21:26:52-----
+PNY_USB_3.0_FD_070B6C8E15A9BA46-0:0|pci-0000_00_14_0-usb-0_2_1_0-scsi-0_0_0_0|disk
 E-Signal_Keyboard|pci-0000_00_14_0-usb-0_5_1_0|hid
 E-Signal_Keyboard|pci-0000_00_14_0-usb-0_5_1_1|hid
+SunplusIT_INC._HD_WebCam|pci-0000_00_14_0-usb-0_9_1_0|video

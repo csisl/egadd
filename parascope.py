@@ -2,6 +2,7 @@
 import sys
 import pyudev
 import re
+
 # Once a device is plugged into the machine, we want to begin logging the device
 from egadd import get_devices
 
@@ -44,13 +45,13 @@ for action, device in monitor:
 	slash_count = str(device).split("/")
 
 	if action == "add":
-			if len(slash_count) == 7:
-				if dev_mode == True:
-					get_devices(1)
-				else:
-					print("\33[31m{}:{}\33[0m".format(action, device))	
-					#get_devices("ADD")
-					get_devices(2)
+		if len(slash_count) == 7:
+			if dev_mode == True:
+				get_devices(1)
+			else:
+				print("\33[31m{}:{}\33[0m".format(action, device))	
+				#get_devices("ADD")
+				get_devices(2)
 	elif action == "remove": # this works perfect
 		if len(slash_count) == 7:
 			if dev_mode == True:
@@ -62,6 +63,4 @@ for action, device in monitor:
 	elif action == "bind" or action == "unbind":
 		continue
 	else:
-		#unknown action occured
-		#print (action)
 		sys.exit()
