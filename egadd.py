@@ -84,6 +84,7 @@ def set_hardware_devices():
 			dev_info = dev.split("|")
 			hardware_list.append(dev)
 	
+	hardware_list = list(set(hardware_list))
 	with open('hardware.json', 'w') as outfile:
 		json.dump(hardware_list, outfile)
 	
