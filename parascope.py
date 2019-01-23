@@ -4,7 +4,7 @@ import pyudev
 import re
 
 # Once a device is plugged into the machine, we want to begin logging the device
-from egadd import get_devices
+from egadd import get_devices, get_hardware_devices, set_hardware_devices
 
 # usage: python3 parascope.py [dev]
 #	dev		a mode to run for debugging so the log files don't get clogged up
@@ -17,6 +17,10 @@ if 'pyudev' not in sys.modules:
 	print("\t$ python3 -m pip install pyudev")
 	sys.exit()
 
+set_hardware_devices()
+get_hardware_devices()
+
+print
 # by default it will not run dev mode
 dev_mode = False
 
