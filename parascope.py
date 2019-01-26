@@ -2,6 +2,7 @@
 import sys
 import pyudev
 import re
+import json
 
 # Once a device is plugged into the machine, we want to begin logging the device
 from egadd import get_devices, get_hardware_devices, set_hardware_devices
@@ -12,15 +13,40 @@ from egadd import get_devices, get_hardware_devices, set_hardware_devices
 # The program to implement Monitor
 
 # First ensure pyudev has been successfully installed on the current machine
+
+settings_dict = {}
+
+# get_settings
+def get_settings():
+	global settings_dict
+	try:
+		with open('settings.json') as data:
+			settings_dict = json.load(data)
+	except:
+		print("Error opening settings.json!")
+
+def set_settings():
+	global settings_dict
+	try:
+		with open('settings.json', 'w') as outfile:
+			json.dump(settings_dict, outfile)
+	except:
+		print("Error opening settings.json!")
+
 if 'pyudev' not in sys.modules:
 	print("In order to run this program, you must import the pyudev module")
 	print("\t$ python3 -m pip install pyudev")
 	sys.exit()
 
-set_hardware_devices()
+# grabbing settings before anything else and checking for first run
+get_settings()
+if settings_dict["first_run"] == "1":
+	settings_dict["first_run"] = "0"
+	set_hardware_devices()
+	set_settings()
+
 get_hardware_devices()
 
-print
 # by default it will not run dev mode
 dev_mode = False
 

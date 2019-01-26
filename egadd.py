@@ -16,6 +16,8 @@ CRED   = '\33[31m'
 # which subsystem do we want to monitor / analyze?
 # default = USB
 subsys = "usb"
+# stores and imports settings
+settings_dict = {}
 
 # devices list (need to change this dictionary)
 device_list = []
@@ -49,7 +51,7 @@ def log_devices():
 
 	# If there are no devices currently plugged into the machine
 	if not device_list:
-		file.write(str("No devices!"))
+		file.write(str("No devices!\n"))
 	else: 
 		for device in device_list:
 			file.write(str(device) + "\n")
@@ -98,7 +100,7 @@ def get_hardware_devices():
 	except:
 		print("Error opening hardware.json!")
 
-	print(hardware_list)
+	#print(hardware_list)
 
 # get the devices with the bash script poltergust3000
 # 	action:		if the device was removed or added, provided by parascope.py
