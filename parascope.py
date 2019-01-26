@@ -20,7 +20,7 @@ settings_dict = {}
 def get_settings():
 	global settings_dict
 	try:
-		with open('settings.json') as data:
+		with open('data/settings.json') as data:
 			settings_dict = json.load(data)
 	except:
 		print("Error opening settings.json!")
@@ -28,8 +28,8 @@ def get_settings():
 def set_settings():
 	global settings_dict
 	try:
-		with open('settings.json', 'w') as outfile:
-			json.dump(settings_dict, outfile)
+		with open('data/settings.json', 'w') as outfile:
+			json.dump(settings_dict, outfile, indent=4)
 	except:
 		print("Error opening settings.json!")
 

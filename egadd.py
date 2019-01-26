@@ -87,15 +87,15 @@ def set_hardware_devices():
 			hardware_list.append(dev)
 	
 	hardware_list = list(set(hardware_list))
-	with open('hardware.json', 'w') as outfile:
-		json.dump(hardware_list, outfile)
+	with open('data/hardware.json', 'w') as outfile:
+		json.dump(hardware_list, outfile, indent=4)
 	
 	hardware_list = []
 
 def get_hardware_devices():
 	global hardware_list
 	try:
-		with open('hardware.json') as data:
+		with open('data/hardware.json') as data:
 			hardware_list = json.load(data)
 	except:
 		print("Error opening hardware.json!")
