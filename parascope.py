@@ -6,7 +6,7 @@ import json
 
 # Once a device is plugged into the machine, we want to begin logging the device
 from egadd import get_devices, get_hardware_devices, set_hardware_devices
-from cache import cache_func
+from cache import Cache
 
 # usage: python3 parascope.py [dev]
 #	dev		a mode to run for debugging so the log files don't get clogged up
@@ -48,6 +48,7 @@ if settings_dict["first_run"]:
 	set_settings()
 
 get_hardware_devices()
+Cache.set_cache()
 
 # by default it will not run dev mode
 dev_mode = False
@@ -81,17 +82,19 @@ try:
 		if action == "add":
 			if len(slash_count) == 7:
 				if dev_mode == True:
-					get_devices(1)
+					get_devices()
 				else:
-					print("\33[31m{}:{}\33[0m".format(action, device))	
-					get_devices(2)
+					print("\33[31m{}:{}\33[0m".format(action, device))
+					Cache.check_cache()	
+					get_devices()
 		elif action == "remove": # this works perfect
 			if len(slash_count) == 7:
 				if dev_mode == True:
-					get_devices(1)
+					get_devices()
 				else:
 					print("\33[31m{}:{}\33[0m".format(action, device))
-					get_devices(2)
+					Cache.check_cache()
+					get_devices()
 		elif action == "bind" or action == "unbind":
 			continue
 		else:

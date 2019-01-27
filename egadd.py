@@ -105,9 +105,9 @@ def get_hardware_devices():
 # get the devices with the bash script poltergust3000
 # 	action:		if the device was removed or added, provided by parascope.py
 #				if egadd is ran alone, it will be the mode
-def get_devices(action=2):
+def get_devices(cache=0):
 
-	time.sleep(1.5)
+	#time.sleep(1.5)
 	# execute our poltergust3000 script and pipe the results into the devices variable
 	try:
 		# save the output to devices
@@ -136,22 +136,21 @@ def get_devices(action=2):
 			
 			# only append the action if it's coming from the parascope.py script
 			if dev not in hardware_list:
-				if action == DEV_MODE or action == USR_MODE:
-					device_list.append(dev)
-				else:
-					device_list.append(action + ": " + dev)
+				device_list.append(dev)
+
 	
 	# make sure all devices are distinct
 	device_list = list(set(device_list))
 
-	if mode == DEV_MODE:
-		print("{}".format('\n'.join(device_list)))
-	else:
+	if not cache:
 		log_devices()
+	else:
+		return device_list
+
 	return	
 
 if __name__ == "__main__":
 	# pass in the mode if egadd is being run alone
-	get_devices(mode)
+	get_devices()
 
 
