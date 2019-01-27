@@ -40,8 +40,9 @@ if 'pyudev' not in sys.modules:
 
 # grabbing settings before anything else and checking for first run
 get_settings()
-if settings_dict["first_run"] == "1":
-	settings_dict["first_run"] = "0"
+# checking if first_run is true (true = this is the users first time running the program)
+if settings_dict["first_run"]:
+	settings_dict["first_run"] = 0
 	set_hardware_devices()
 	set_settings()
 
