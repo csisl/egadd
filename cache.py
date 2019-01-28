@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 # This python file will handle device caching
-from enum import Enum
 from egadd import get_devices
 import time
 
