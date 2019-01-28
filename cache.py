@@ -6,7 +6,6 @@ from egadd import get_devices
 import time
 
 cache_list = []
-####### using encapsulation to make these functions private #######
 
 ### invalidate_cache ###
 # This function iniatially sets the cache
@@ -15,7 +14,7 @@ def invalidate_cache():
     cache_list = get_devices(1)
 
 ### check_cache ###
-# This function checks the cache
+# This function compares cache with temporary list
 def check_cache():
     global cache_list
     temp_list = []
@@ -31,7 +30,6 @@ def check_cache():
             print("found a difference!")
             print(temp_list)
             invalidate_cache()
-
             return
     return
 
