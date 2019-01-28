@@ -5,37 +5,34 @@ from enum import Enum
 from egadd import get_devices
 import time
 
-# from cache import Cache
+cache_list = []
+####### using encapsulation to make these functions private #######
 
-class Cache(Enum):
+### invalidate_cache ###
+# This function iniatially sets the cache
+def invalidate_cache():
+    global cache_list
+    cache_list = get_devices(1)
 
-    cache_list = []
-    ####### using encapsulation to make these functions private #######
+### check_cache ###
+# This function checks the cache
+def check_cache():
+    global cache_list
+    temp_list = []
 
-    ### invalidate_cache ###
-    # This function iniatially sets the cache
-    def invalidate_cache():
-        global cache_list
-        cache_list = get_devices(1)
+    cache_list.sort()
+    temp_list.sort()
 
-    ### check_cache ###
-    # This function checks the cache
-    def check_cache():
-        global cache_list
-        temp_list = []
+    for i in range(0,5):
+        time.sleep(1)
+        temp_list = get_devices(1)
 
-        cache_list.sort()
-        temp_list.sort()
+        if temp_list != cache_list:
+            print("found a difference!")
+            print(temp_list)
+            invalidate_cache()
 
-        for i in range(0,5):
-            time.sleep(1)
-            temp_list = get_devices(1)
-
-            if temp_list != cache_list:
-                print("found a difference!")
-                print(temp_list)
-                invalidate_cache()
-
-                return
+            return
+    return
 
 
