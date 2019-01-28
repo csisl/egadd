@@ -12,16 +12,9 @@ class Cache(Enum):
     cache_list = []
     ####### using encapsulation to make these functions private #######
 
-    
     ### invalidate_cache ###
-    # This function invalidates the cache
-    def invalidate_cache(cls):
-        print("im here")
-        set_cache()
-
-    ### set_cache ###
     # This function iniatially sets the cache
-    def set_cache():
+    def invalidate_cache():
         global cache_list
         cache_list = get_devices(1)
 
@@ -30,6 +23,10 @@ class Cache(Enum):
     def check_cache():
         global cache_list
         temp_list = []
+
+        cache_list.sort()
+        temp_list.sort()
+
         for i in range(0,5):
             time.sleep(1)
             temp_list = get_devices(1)
@@ -37,7 +34,7 @@ class Cache(Enum):
             if temp_list != cache_list:
                 print("found a difference!")
                 print(temp_list)
-                #invalidate_cache() 
+                invalidate_cache()
 
                 return
 

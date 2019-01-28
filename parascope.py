@@ -48,7 +48,7 @@ if settings_dict["first_run"]:
 	set_settings()
 
 get_hardware_devices()
-Cache.set_cache()
+Cache.invalidate_cache()
 
 # by default it will not run dev mode
 dev_mode = False
