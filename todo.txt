@@ -1,5 +1,4 @@
-- Run monitor script on startup
+- Turn script into a service
 - UI
 -* Finish logging
-- log hardware devices so they don't show up on the log
 ( -* means most important)
