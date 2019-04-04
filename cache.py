@@ -44,7 +44,7 @@ def check_cache():
         if temp_list != cache_list:
             #print("found a difference!")
             #print(temp_list)
-            invalidate_cache() # reseting the cache
+            invalidate_cache() # resetting the cache
             return
     # 5 second timeout occured            
     return
