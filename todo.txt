@@ -1,4 +1,5 @@
 - Turn script into a service
 - UI
 -* Finish logging
+- Create libraries for devices
 ( -* means most important)
