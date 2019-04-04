@@ -11,6 +11,7 @@ import time
 
 cache_list = []
 
+
 ##### invalidate_cache #####
 # Purpose:
 #       This function resets the device cache using get_devices().
@@ -30,21 +31,20 @@ def invalidate_cache():
 #       Once the difference is found, invalidate_cache() is called.
 def check_cache():
     global cache_list
-    temp_list = []
 
     # sorting the list for direct comparison
     cache_list.sort()
 
     # 5 second time out
     for i in range(0,5):
-        time.sleep(1) # 1 second pause 
+        time.sleep(1) # 1 second pause
         temp_list = get_devices(1)
-        temp_list.sort() 
+        temp_list.sort()
 
         if temp_list != cache_list:
             #print("found a difference!")
             #print(temp_list)
-            invalidate_cache() #reseting the cache
+            invalidate_cache() # reseting the cache
             return
     # 5 second timeout occured            
     return
