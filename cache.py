@@ -5,7 +5,6 @@
 # allows for proper confirmation of an insertion or removal. 
 # There is a 5 second timeout for checking the cache. For most modern CPUs
 # this should be plenty of time.
-
 from egadd import get_devices
 import time
 
@@ -32,18 +31,14 @@ def invalidate_cache():
 def check_cache():
     global cache_list
 
-    # sorting the list for direct comparison
     cache_list.sort()
 
-    # 5 second time out
     for i in range(0,5):
         time.sleep(1) # 1 second pause
         temp_list = get_devices(1)
         temp_list.sort()
 
         if temp_list != cache_list:
-            #print("found a difference!")
-            #print(temp_list)
             invalidate_cache() # resetting the cache
             return
     # 5 second timeout occured            
